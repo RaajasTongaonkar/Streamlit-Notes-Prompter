@@ -9,11 +9,11 @@ Song - Cardigan by Taylor Swift
 For a different song, will have to change the strumming pattern and the notes AND the sleep time
 """
 import time
-from termcolor import colored,cprint
+# from termcolor import colored,cprint
 from os import system
 import platform
 import streamlit as st
-from time import sleep
+# from time import sleep
 
 st.set_page_config(
     layout="wide",
@@ -105,13 +105,14 @@ def playSong(colour):
                 if k != len(notes) - 1:
                     nextLineContainer.write(notes[k+1])
                     # st.write(notes[k + 1])
-                
+                else:
+                    nextLineContainer.write("")
                 time.sleep(0.22)
                 # system(clearStr)
-    time.sleep(1)
     currentLineContainer.write("")
     currentNotesContainer.write("")
     nextLineContainer.write("")
+    time.sleep(1)
     st.write("Fin.")
 
 
